@@ -1,0 +1,214 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #091c16;
+  --color-forest-light: #122a21;
+  --color-forest-dark: #040e0b;
+  --color-cognac: #9e4a1a;
+  --color-cognac-dark: #77340e;
+  --color-cognac-soft: #ba5921;
+  --color-champagne: #c5a059;
+  --color-champagne-light: #f3e8d2;
+  --color-canvas: #f5f6f2;
+  --color-canvas-pure: #ffffff;
+  --color-canvas-subtle: #ecefe8;
+  --color-ink: #0f1714;
+  --color-ink-muted: #44524c;
+  --color-border-fine: #dadfd6;
+  --color-border-dark: rgba(197, 160, 89, 0.22);
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+:root {
+  --forest: #091c16;
+  --forest-light: #122a21;
+  --forest-dark: #040e0b;
+  --cognac: #9e4a1a;
+  --cognac-dark: #77340e;
+  --champagne: #c5a059;
+  --champagne-light: #f3e8d2;
+  --canvas: #f5f6f2;
+  --canvas-pure: #ffffff;
+  --canvas-subtle: #ecefe8;
+  --ink: #0f1714;
+  --ink-muted: #44524c;
+  --border-fine: #dadfd6;
+}
+
+/* Distinct Typographic Hierarchy (Scale steps ≥ 1.25x) */
+h1, .h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 3.85rem);
+  line-height: 1.12;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+}
+
+h2, .h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  line-height: 1.22;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h3, .h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+h4, .h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: var(--canvas);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+}
+
+/* Insets and borders (Resolving cramped-padding) */
+.vintage-border {
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  padding: 12px;
+  background-color: rgba(4, 14, 11, 0.5);
+  border-radius: 8px;
+}
+
+.racing-pattern {
+  background-image: radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.gold-foil {
+  color: #c5a059;
+}
+
+/* Accessible focus visible states */
+a:focus-visible, 
+button:focus-visible, 
+input:focus-visible, 
+textarea:focus-visible {
+  outline: 2px solid #c5a059 !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1.5rem;
+  background: #091c16;
+  color: #c5a059;
+  padding: 0.75rem 1.5rem;
+  z-index: 1000;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: 1px solid #c5a059;
+  border-radius: 4px;
+  transition: top 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+.skip-link:focus {
+  top: 1.5rem;
+}
+
+/* Touch target helpers (≥ 44px) */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.service-action-link {
+  min-height: 44px;
+  min-width: 90px;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #091c16;
+  background-color: rgba(197, 160, 89, 0.12);
+  border: 1px solid rgba(197, 160, 89, 0.28);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.service-action-link:hover {
+  background-color: #c5a059;
+  color: #091c16;
+  border-color: #c5a059;
+  transform: translateY(-1px);
+}
+
+/* Nav Link Hover Micro-interaction */
+.nav-item-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 4px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  transition: color 0.2s ease;
+}
+.nav-item-link:hover {
+  color: #c5a059;
+}
+.nav-item-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: #c5a059;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-item-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Accessible subtle scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #040e0b;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 160, 89, 0.35);
+  border-radius: 4px;
+  border: 2px solid #040e0b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(197, 160, 89, 0.65);
+}
+
+/* Reduced motion honoring user accessibility preferences without 0.01ms kill */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.05s !important;
+  }
+}

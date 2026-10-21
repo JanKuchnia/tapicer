@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T12:48:40+02:00",
+  "title": "Design System: Marcin Nowak Atelier Rymarskie",
+  "extensions": {
+    "colorMeta": {
+      "forest": {
+        "role": "primary",
+        "displayName": "British Racing Forest Green",
+        "canonical": "#091c16",
+        "tonalRamp": ["#040e0b", "#091c16", "#122a21", "#1b3a2f", "#264c3e", "#3a6857", "#598d78", "#8ab4a3"]
+      },
+      "cognac": {
+        "role": "primary",
+        "displayName": "Saddle Cognac Leather",
+        "canonical": "#9e4a1a",
+        "tonalRamp": ["#4a1c06", "#77340e", "#9e4a1a", "#ba5921", "#d5743a", "#e59360", "#f2b58d", "#fae0cf"]
+      },
+      "champagne": {
+        "role": "secondary",
+        "displayName": "Champagne Gold Foil",
+        "canonical": "#c5a059",
+        "tonalRamp": ["#5c451b", "#86672c", "#a8843e", "#c5a059", "#d8b979", "#e7cf9e", "#f3e8d2", "#faf4eb"]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Warm Linen Canvas",
+        "canonical": "#f5f6f2",
+        "tonalRamp": ["#1a1f1d", "#3b423f", "#656e6a", "#9aa49f", "#c9d1cc", "#ecefe8", "#f5f6f2", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Serif", "purpose": "Main hero titles and signature historical statements." },
+      "headline": { "displayName": "Headline Serif", "purpose": "Section titles and prominent restoration marquee headers." },
+      "title": { "displayName": "Title Serif", "purpose": "Discipline names, card headings, and testimonial marques." },
+      "body": { "displayName": "Body Sans", "purpose": "Paragraphs, dossiers, specifications, and client copy." },
+      "label": { "displayName": "Label Technical Sans", "purpose": "Registry numbers, timestamps, and metadata tags." }
+    },
+    "shadows": [
+      { "name": "surface-lift", "value": "0 1px 3px rgba(0, 0, 0, 0.05)", "purpose": "Subtle grounding for white cards on canvas." },
+      { "name": "button-elevation", "value": "0 4px 12px rgba(158, 74, 26, 0.25)", "purpose": "Warm tactile glow for telephone consultation buttons." },
+      { "name": "saloon-shadow", "value": "0 10px 25px -5px rgba(0, 0, 0, 0.3)", "purpose": "Elevation for the sticky header over page content." }
+    ],
+    "motion": [
+      { "name": "ease-atelier", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Smooth luxurious transition for hover states." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Consultation Master Button",
+      "kind": "button",
+      "refersTo": "button-consultation",
+      "description": "Primary phone action connecting client with master craftsman.",
+      "html": "<a href=\"tel:+48605304999\" class=\"ds-btn-consultation\"><span class=\"ds-btn-icon\">&phone;</span><span class=\"ds-btn-text\"><span class=\"ds-btn-label\">Konsultacja mistrza</span><span class=\"ds-btn-phone\">605 304 999</span></span></a>",
+      "css": ".ds-btn-consultation { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #9e4a1a, #77340e); color: #ffffff; padding: 10px 20px; border-radius: 4px; border: 1px solid #c5a059; text-decoration: none; font-family: 'Manrope', sans-serif; box-shadow: 0 4px 12px rgba(158, 74, 26, 0.25); transition: filter 0.2s ease, transform 0.2s ease; } .ds-btn-consultation:hover { filter: brightness(1.1); transform: translateY(-1px); } .ds-btn-icon { color: #c5a059; font-size: 18px; } .ds-btn-text { display: flex; flex-direction: column; text-align: left; line-height: 1.2; } .ds-btn-label { font-size: 10px; color: #f3e8d2; } .ds-btn-phone { font-size: 12px; font-weight: 700; letter-spacing: 0.05em; }"
+    },
+    {
+      "name": "Primary Champagne Action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "High-visibility action for quotes and dossier inquiries.",
+      "html": "<button class=\"ds-btn-champagne\">Rozmowa o pojeździe: 605 304 999</button>",
+      "css": ".ds-btn-champagne { display: inline-flex; align-items: center; justify-content: center; background: #c5a059; color: #091c16; padding: 14px 28px; border-radius: 4px; border: none; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; transition: background 0.2s ease, transform 0.2s ease; } .ds-btn-champagne:hover { background: #f3e8d2; transform: translateY(-1px); }"
+    },
+    {
+      "name": "Historic Registry Seal",
+      "kind": "chip",
+      "refersTo": "badge-registry",
+      "description": "Artisanal tactile seal commemorating 1998 saddlery heritage.",
+      "html": "<div class=\"ds-seal\"><span class=\"ds-seal-badge\">&#9733;</span><span class=\"ds-seal-title\">Tradycja 1998</span><span class=\"ds-seal-sub\">Krzyszkowice</span></div>",
+      "css": ".ds-seal { display: inline-flex; flex-direction: column; align-items: center; background: rgba(4, 14, 11, 0.95); border: 1px solid rgba(197, 160, 89, 0.5); padding: 10px 14px; border-radius: 4px; text-align: center; backdrop-filter: blur(4px); font-family: 'Manrope', sans-serif; } .ds-seal-badge { color: #c5a059; font-size: 16px; margin-bottom: 2px; } .ds-seal-title { font-size: 10px; font-weight: 700; letter-spacing: 0.05em; color: #ffffff; } .ds-seal-sub { font-size: 9px; color: #c5a059; opacity: 0.9; }"
+    },
+    {
+      "name": "Atelier Ledger Row",
+      "kind": "card",
+      "refersTo": "card-ledger",
+      "description": "Architectural discipline entry with classical numeral and craft description.",
+      "html": "<div class=\"ds-ledger-row\"><span class=\"ds-ledger-num\">01</span><div class=\"ds-ledger-content\"><h4 class=\"ds-ledger-title\">Obszywanie kierownic</h4><p class=\"ds-ledger-desc\">Precyzyjny dobór skór gładkich, perforowanych i alcantary. Ściegi fabryczne i sportowe.</p></div></div>",
+      "css": ".ds-ledger-row { display: flex; align-items: flex-start; gap: 16px; padding: 18px 12px; border-bottom: 1px solid #dadfd6; transition: background 0.2s ease; border-radius: 4px; } .ds-ledger-row:hover { background: rgba(236, 239, 232, 0.5); } .ds-ledger-num { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px; font-weight: 700; color: #c5a059; width: 32px; flex-shrink: 0; } .ds-ledger-content { display: flex; flex-direction: column; gap: 4px; } .ds-ledger-title { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 18px; font-weight: 700; color: #091c16; } .ds-ledger-desc { margin: 0; font-family: 'Manrope', sans-serif; font-size: 12px; font-weight: 300; color: #44524c; line-height: 1.5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Concours Preservation Atelier",
+    "overview": "The visual world of Marcin Nowak Atelier Rymarskie reflects an uncompromising standard of aristocratic craft, heritage preservation, and master saddlery dating back to 1998. Rather than adopting the loud, neon-lit visual conventions of modern commercial auto-detailing shops or generic franchised trimmers, this design system evokes the refined atmosphere of an elite coachbuilder's private restoration salon and bookbinder's archival workshop.\n\nThe visual architecture is structured around deliberate, high-contrast atmospheric shifts: deep British Racing Forest greens (#091c16) provide dignified gravity for the atelier brand, hero stages, and technical protocol ledgers, while warm Linen Canvas (#f5f6f2) creates an inviting, highly legible editorial canvas for detailed service dossiers, case studies, and customer correspondence. Metallic champagne gold foil (#c5a059) functions as an artisanal watermark, establishing hairline boundary rules, registry stamps, and subtle status markers without devolving into excessive ornament.\n\nInteractive touchpoints prioritize the tactile weight of hand-tailored leathercraft. Primary call actions are imbued with rich Saddle Cognac leather gradients (#9e4a1a to #77340e), immediately identifying the phone consultation with master craftsman Marcin Nowak as the central relationship conduit of the workshop.",
+    "keyCharacteristics": [
+      "Deep heritage grounding via British Racing Forest Green and archival linen canvas.",
+      "Classical, stately typography pairing: Cormorant Garamond display alongside legible Manrope technical body copy.",
+      "Hairline gold foil framing (rgba(197, 160, 89, 0.28)) and radial micro-pattern grain.",
+      "Tactile, dignified CTAs reflecting natural vegetable-tanned leather and saddler's wax.",
+      "High editorial density with structured data strips, definition lists, and formal registry dossier numbering."
+    ],
+    "rules": [
+      {
+        "name": "The Heritage Rarity Rule",
+        "body": "Champagne Gold Foil (#c5a059) is reserved for fine hairline borders, heraldic stamps, and key CTA accents. It must never coat expansive solid backdrops, preserving its metallic preciousness.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cognac Tactile Rule",
+        "body": "Saddle Cognac gradients (#9e4a1a to #77340e) are strictly reserved for telephone consultation actions (tel:+48605304999) and material badge signifiers. They signify a direct line to the master craftsman.",
+        "section": "colors"
+      },
+      {
+        "name": "The Master Artisan Rule",
+        "body": "Cormorant Garamond is reserved exclusively for editorial headlines, section titles, and project marques; Manrope handles all body text, technical specs, phone CTAs, and navigation for sharp, fatigue-free legibility.",
+        "section": "typography"
+      },
+      {
+        "name": "The Classical Numeral Rule",
+        "body": "Discipline numbering (e.g., '01', '02') and historical dates (e.g., '1998') are styled in Cormorant Garamond italic or bold to maintain atelier tradition.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Depth Rule",
+        "body": "Depth is established through 1px gold and fine linen dividers rather than blurred drop shadows. Surfaces feel like physical leather skins and parchment boards laid upon a craftsman's cutting table.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Radial Grain Rule",
+        "body": "Deep Forest surfaces incorporate a subtle radial micro-dot racing pattern (racing-pattern, 24px grid at 8% opacity) to provide tactile tooth without visual noise.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do format all telephone links with tel:+48605304999 and display operating hours (Pn–Pt 08:00–17:00).",
+      "Do pair Cormorant Garamond for titles with Manrope for body text to maintain artisan-technical balance.",
+      "Do use 1px hairline borders (border-champagne/25 or border-border-fine) for structural divisions.",
+      "Do use authentic Polish craftsmanship terminology (rymarstwo, ścieg francuski, skóra juchtowa, Nappa, renowacja zabytków).",
+      "Do maintain the 4px / 8px restrained corner radius across all components."
+    ],
+    "donts": [
+      "Don't use neon, electric greens, or commercial saturated blues; adhere strictly to Forest, Cognac, Champagne, and Linen.",
+      "Don't use generic commercial claims like 'najtaniej', 'błyskawicznie', or 'zawsze na czas'.",
+      "Don't apply large, heavy, blurred box shadows; maintain flat, layered architectural boundaries.",
+      "Don't use Cormorant Garamond for long paragraphs or small UI labels.",
+      "Don't add arbitrary border-radius values (e.g. 16px, 24px, or 32px pill cards); keep corners tailored and crisp."
+    ]
+  }
+}
